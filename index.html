@@ -1389,8 +1389,8 @@ footer .social-media a:hover {
 
       const loadingMsg = appendMessage('<i class="fa-solid fa-spinner fa-spin"></i> Memproses dengan Gemini 2.5 Flash...', 'bot');
 
-      // Endpoint model Gemini 2.5 Flash
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+  // KODE BARU (VALID)
+const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
       const payload = {
         contents: [
