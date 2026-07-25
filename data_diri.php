@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- SEO Utama -->
+  <title>PRXD App | Portofolio & Records Nyoman Pradipa</title>
+  <meta name="description" content="Portofolio resmi dan rekam jejak project Nyoman Pradipa Adyatma (PRXD App) - Developer & Modder yang berfokus pada web interaktif, aplikasi Capacitor, integrasi Firebase, dan optimasi keamanan UI/UX.">
+  <meta name="keywords" content="Nyoman Pradipa, Nyoman Pradipa Adyatma, PRXD App, PRXD, WIC App, Nusantara Craft, Panel Lab Mobile AI, Tongkrongan Kampus Project, Capacitor Mobile Developer, Firebase Developer, Pomubochi Editor">
+  <meta name="author" content="Nyoman Pradipa Adyatma">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0f19">
+
+  <link rel="canonical" href="https://wicprxdapp.great-site.net/">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wicprxdapp.great-site.net/">
+  <meta property="og:title" content="PRXD App | Nyoman Pradipa - Developer & Creative Moderator">
+  <meta property="og:description" content="Rekam jejak, pencapaian, dan koleksi project resmi karya Nyoman Pradipa (PRXD App).">
+  <meta property="og:image" content="https://wicprxdapp.great-site.net/pA.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PRXD App | Nyoman Pradipa Portfolio">
+  <meta name="twitter:description" content="Full-Stack Web, Capacitor Mobile App Developer, dan Content Moderator.">
+  <meta name="twitter:image" content="https://wicprxdapp.great-site.net/pA.jpg">
+
+  <link rel="icon" type="image/png" href="Minimal initial brand logo (1).png">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nyoman Pradipa Adyatma",
+    "alternateName": ["PRXD App", "Nyoman Pradipa", "PRXD"],
+    "url": "https://wicprxdapp.great-site.net/",
+    "image": "https://wicprxdapp.great-site.net/pA.jpg",
+    "jobTitle": "Web & Mobile Developer",
+    "alumniOf": "S1 Sistem Informasi",
+    "knowsAbout": [
+      "Web Development",
+      "JavaScript Logic",
+      "Google Firebase Integration",
+      "Capacitor Framework",
+      "UI/UX Design for Elderly",
+      "Security Obfuscation & Penetration Testing",
+      "TikTok Content Moderation & MMD Editing"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/prxd_1203",
+      "https://www.threads.com/@prxd_1203",
+      "https://fastwork.id/user/tongkamproject?source=search"
+    ]
+  }
+  </script>
+
+  <style>
+/* ==========================================
+   1. SYSTEM VARIABLES & RESET
+   ========================================== */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-dark: #070a12;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --primary: #2563eb;
+  --primary-glow: rgba(37, 99, 235, 0.4);
+  --accent: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.3);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-active: rgba(56, 189, 248, 0.4);
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body { 
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  background-color: var(--bg-dark); 
+  color: var(--text-main); 
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a { 
+  text-decoration: none; 
+  color: inherit; 
+}
+
+img { 
+  max-width: 100%; 
+  display: block; 
+}
+
+/* Ambient Glows */
+.ambient-glow {
+  position: fixed;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  filter: blur(150px);
+  z-index: -1;
+  pointer-events: none;
+  animation: floatGlow 14s infinite alternate ease-in-out;
+}
+.glow-1 { top: -15%; left: -10%; background: var(--primary-glow); }
+.glow-2 { top: 40%; right: -15%; background: var(--accent-glow); animation-delay: -7s; }
+.glow-3 { bottom: -10%; left: 20%; background: rgba(139, 92, 246, 0.25); }
+
+@keyframes floatGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, 60px) scale(1.2); }
+}
+
+/* Scroll-Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION
+   ========================================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  z-index: 1000;
+  background: rgba(7, 10, 18, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: var(--transition-smooth);
+}
+
+header.scrolled { 
+  padding: 12px 8%;
+  background: rgba(7, 10, 18, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-bottom-color: rgba(56, 189, 248, 0.2);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo img {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--glass-border-active);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.brand-logo .brand-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ffffff 40%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.header-btn {
+  background: linear-gradient(135deg, var(--primary), #1d4ed8);
+  color: #fff;
+  padding: 9px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px var(--primary-glow);
+  transition: var(--transition-smooth);
+}
+
+.header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--primary-glow);
+  border-color: var(--accent);
+}
+
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 140px 8% 60px 8%;
+  position: relative;
+}
+
+.hero-avatar-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.hero-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 30px var(--accent-glow);
+  padding: 3px;
+  background: var(--bg-dark);
+}
+
+.status-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid var(--success);
+  color: #34d399;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(8px);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--success);
+  border-radius: 50%;
+  animation: blink 1.5s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff 30%, var(--accent), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  max-width: 750px;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.hero .buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hero .buttons a {
+  padding: 15px 32px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-smooth);
+}
+
+.hero .buttons a.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 10px 25px var(--primary-glow);
+}
+
+.hero .buttons a.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px var(--primary-glow);
+}
+
+.hero .buttons a.btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  border: 1px solid var(--glass-border);
+}
+
+.hero .buttons a.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  padding: 20px 35px;
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  max-width: 800px;
+  width: 100%;
+}
+
+.stat-item h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #fff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-item p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   4. DETAILED ABOUT ME & RECORDS SECTION
+   ========================================== */
+.about-section {
+  padding: 90px 8%;
+}
+
+.bento-about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bento-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 32px;
+  transition: var(--transition-smooth);
+}
+
+.bento-card:hover {
+  border-color: var(--glass-border-active);
+  transform: translateY(-5px);
+}
+
+.bento-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bento-card h3 i {
+  color: var(--accent);
+}
+
+.bento-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.bento-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bento-list li {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bento-list li i {
+  color: var(--accent);
+  margin-top: 3px;
+}
+
+.timeline-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.timeline-item {
+  border-left: 2px solid var(--accent);
+  padding-left: 16px;
+  position: relative;
+}
+
+.timeline-item .date {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.timeline-item h4 {
+  font-size: 0.98rem;
+  color: #fff;
+  margin: 2px 0 4px 0;
+}
+
+.timeline-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   5. SKILLS & TECHNICAL MASTERY
+   ========================================== */
+.skills {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem; 
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 45px;
+  font-size: 1rem;
+}
+
+.skills-list { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 16px; 
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px 24px;
+  border-radius: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill:hover { 
+  transform: translateY(-6px);
+  background: rgba(37, 99, 235, 0.12);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+}
+
+/* ==========================================
+   6. PROJECTS SHOWCASE
+   ========================================== */
+.projects {
+  padding: 80px 8%;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.project-card .img-wrapper {
+  overflow: hidden;
+  height: 210px;
+  position: relative;
+}
+
+.project-card img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover img {
+  transform: scale(1.08);
+}
+
+.project-card .project-info { 
+  padding: 28px; 
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card .project-info h3 { 
+  color: white; 
+  margin-bottom: 10px; 
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.project-card:hover .project-info h3 {
+  color: var(--accent);
+}
+
+.project-card .project-info p { 
+  font-size: 0.92rem; 
+  line-height: 1.6; 
+  color: var(--text-muted); 
+  margin-bottom: 20px;
+}
+
+.project-card .learn-more {
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover .learn-more {
+  gap: 14px;
+  color: #fff;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--glass-border-active);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* ==========================================
+   7. CAPACITOR MOBILE APP SECTION
+   ========================================== */
+.capacitor-section {
+  padding: 60px 8% 100px 8%;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.app-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.app-img-wrapper {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+.app-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.app-card:hover .app-img-wrapper img {
+  transform: scale(1.06);
+}
+
+.app-details {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--glass-border);
+}
+
+.app-details h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.app-details p {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 45px rgba(37, 99, 235, 0.25);
+}
+
+/* ==========================================
+   8. GEMINI 2.5 FLASH AI FLOATING WIDGET
+   ========================================== */
+.ai-toggle-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+  cursor: pointer;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.ai-toggle-btn:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(56, 189, 248, 0.6);
+}
+
+.ai-chat-card {
+  position: fixed;
+  bottom: 95px;
+  right: 25px;
+  width: 380px;
+  max-width: calc(100vw - 40px);
+  height: 520px;
+  max-height: calc(100vh - 120px);
+  background: rgba(11, 15, 25, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border-active);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.95);
+  transition: var(--transition-smooth);
+}
+
+.ai-chat-card.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0) scale(1);
+}
+
+.ai-chat-header {
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ai-chat-header .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ai-chat-header .title i {
+  color: var(--accent);
+}
+
+.ai-chat-header .close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.ai-chat-header .close-btn:hover {
+  color: #fff;
+}
+
+.ai-chat-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ai-msg {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.ai-msg.user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.ai-msg.bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  border-bottom-left-radius: 4px;
+}
+
+.ai-chat-footer {
+  padding: 12px;
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.ai-chat-footer input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 10px 16px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.88rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.ai-chat-footer input:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ai-chat-footer button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.ai-chat-footer button:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   9. FOOTER
+   ========================================== */
+footer { 
+  text-align: center; 
+  padding: 50px 24px; 
+  background: #04060b;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  font-size: 0.95rem; 
+}
+
+footer .social-media {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+footer .social-media a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+  color: var(--text-muted);
+}
+
+footer .social-media a:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px var(--primary-glow);
+  border-color: var(--primary);
+}
+
+/* ==========================================
+   10. RESPONSIVE
+   ========================================== */
+@media(max-width: 768px){
+  header { 
+    padding: 15px 20px; 
+    flex-direction: column; 
+    gap: 12px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero h1 { 
+    font-size: 2.3rem; 
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .hero .buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .ai-chat-card {
+    right: 15px;
+    bottom: 85px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="brand-logo">
+      <img src="pA.jpg" alt="PRXD App Logo">
+      <span class="brand-text">PRXD APP</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#hero">Beranda</a></li>
+      <li><a href="#about">Tentang Aku</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#projects">Project</a></li>
+    </ul>
+
+    <nav>
+      <a href="https://wicprxdapp.great-site.net/" target="_blank" class="header-btn">
+        <i class="fa fa-download"></i> Unduh WIC App
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Header -->
+    <section class="hero" id="hero">
+      <div class="hero-avatar-wrapper reveal">
+        <img src="pA.jpg" alt="Nyoman Pradipa Adyatma" class="hero-avatar">
+        <div class="status-badge">
+          <span class="status-dot"></span> Active Developer
+        </div>
+      </div>
+
+      <div class="hero-tag reveal">
+        <i class="fa-solid fa-code"></i> Sistem Informasi Student & Mobile App Developer
+      </div>
+
+      <h1 class="reveal">Nyoman Pradipa Adyatma</h1>
+
+      <p class="reveal">
+        Mahasiswa Sistem Informasi, pengembang aplikasi berbasis <strong>Capacitor & Web</strong>, pakar logika JavaScript & Firebase, serta moderator & editor digital terpercaya.
+      </p>
+
+      <div class="buttons reveal">
+        <a href="#about" class="btn-primary"><i class="fa fa-user"></i> Profil & Rekam Jejak</a>
+        <a href="#projects" class="btn-secondary"><i class="fa fa-rocket"></i> Lihat Semua Project</a>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <h3>S1 SI</h3>
+          <p>Sistem Informasi</p>
+        </div>
+        <div class="stat-item">
+          <h3>Capacitor & Web</h3>
+          <p>Web-to-App Modder</p>
+        </div>
+<div class="stat-item">
+          <h3>React Native (google)</h3>
+          <p>Aplikasi Murni Menggunakan Native</p>
+        </div>
+
+        <div class="stat-item">
+          <h3>Japan Goal</h3>
+          <p>Karir Impian Masa Depan</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me & Records Section -->
+    <section class="about-section" id="about">
+      <h2 class="section-title reveal" style="text-align: center;">Tentang Aku & Catatan Riwayat</h2>
+      <p class="section-subtitle reveal" style="text-align: center;">Rangkuman identitas, rekam jejak akademik, spesialisasi teknis, dan pencapaian yang pernah dikerjakan</p>
+
+      <div class="bento-about-grid">
+        
+        <!-- Card 1: Identitas & Target -->
+        <div class="bento-card reveal">
+          <h3><i class="fa-solid fa-id-card"></i> Profil & Aspirasi Karir</h3>
+          <p><strong>Nyoman Pradipa Adyatma</strong> adalah seorang mahasiswa jurusan <strong>Sistem Informasi</strong> asal Indonesia yang berfokus pada ekosistem pengembang aplikasi web dan mobile.</p>
+          <ul class="bento-list">
+            <li><i class="fa-solid fa-graduation-cap"></i> <strong>Pendidikan:</strong> S1 Sistem Informasi (Aktif mengerjakan tugas akademik & ujian coding manual PBO).</li>
+            <li><i class="fa-solid fa-plane-departure"></i> <strong>Target Karir:</strong> Memiliki cita-cita dan cita-cita profesional untuk bekerja di Jepang.</li>
+            <li><i class="fa-solid fa-user-shield"></i> <strong>Prinsip:</strong> Mengutamakan privasi, etika dalam komunitas digital, serta perlindungan hak cipta dan kenyamanan kreator.</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Keahlian Teknis Khusus -->
+        <div class="bento-card reveal">
+          <h3><i class="fa-solid fa-microchip"></i> Spesialisasi Teknis & Security</h3>
+          <p>Memiliki penguasaan mendalam dalam konversi web ke aplikasi native serta pengujian keamanan tingkat lanjut.</p>
+          <ul class="bento-list">
+            <li><i class="fa-solid fa-mobile-screen-button"></i> <strong>Capacitor Framework:</strong> Pengalaman optimasi versi Capacitor 8.3.0 & Appilix untuk aplikasi Android.</li>
+            <li><i class="fa-solid fa-fire"></i> <strong>Backend Firebase:</strong> Ahli dalam konfigurasi Firebase Security Rules, SHA-256 fingerprint, dan Cloud Messaging.</li>
+            <li><i class="fa-solid fa-shield-halved"></i> <strong>Penetration Testing:</strong> Melakukan security audit mandiri menggunakan MT Manager & obfuskasi kode API Key pada aplikasi "Panel Lab".</li>
+            <li><i class="fa-solid fa-universal-access"></i> <strong>Aksesibilitas UI/UX:</strong> Merancang antarmuka interaktif dan nyaman digunakan serta ramah untuk usia lansia.</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Peran Komunitas & Moderasi -->
+        <div class="bento-card reveal">
+          <h3><i class="fa-solid fa-clapperboard"></i> Editor & Content Moderator</h3>
+          <p>Aktif dalam dunia kreatif digital sebagai editor dan moderator komunitas kreator digital.</p>
+          <ul class="bento-list">
+            <li><i class="fa-brands fa-tiktok"></i> <strong>TikTok Community Manager:</strong> Mengelola interaksi dan optimasi tayangan video hingga mencapai milestone 18.6k views untuk Pomu (Pomubochi).</li>
+            <li><i class="fa-solid fa-film"></i> <strong>MMD Animator:</strong> Memproduksi dan mengedit animasi MikuMikuDance (MMD).</li>
+            <li><i class="fa-solid fa-heart"></i> <strong>Proteksi Komunitas:</strong> Menjaga iklim komunitas yang sehat, aman dari pelecehan digital, dan protektif terhadap privasi kreator.</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Catatan Timeline Project -->
+        <div class="bento-card reveal" style="grid-column: span 1 / -1;">
+          <h3><i class="fa-solid fa-clock-rotate-left"></i> Catatan Riwayat Project Utama</h3>
+          <div class="timeline-box">
+            
+            <div class="timeline-item">
+              <span class="date">Aplikasi Sosial Media</span>
+              <h4>WIC App (Social Media Aggregator)</h4>
+              <p>Aplikasi ringan berukuran 32MB yang menggabungkan berbagai fitur interaktif, dihosting pada Netlify dan kini diperbarui menggunakan Database Monsta V2 Pro.</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="date">Program Kreativitas Mahasiswa (PKM)</span>
+              <h4>Panel Lab Mobile AI</h4>
+              <p>Aplikasi pemeriksaan kesehatan berbasis AI dengan UI/UX yang dirancang khusus untuk kemudahan aksesibilitas masyarakat umum dan lansia. Dilengkapi enkripsi kode SHA-256 & keamanan Firebase.</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="date">Project E-Commerce & SDLC</span>
+              <h4>Nusantara Craft & Market System</h4>
+              <p>Pengembangan marketplace kerajinan tangan Indonesia menggunakan metode SDLC Waterfall dan pemodelan UML. Berfokus pada aspek keamanan dan alur transaksi lancar.</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="date">Project Kolaborasi Akademik</span>
+              <h4>Sistem Logistik Polda, SI Absen, & Edukasi SDLC</h4>
+              <p>Mengembangkan Sistem Biro Logistik Polda, Aplikasi SI Absen Mahasiswa (Capacitor APK), serta naskah animasi edukasi SDLC bersama tim akademik.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="skills" id="skills">
+      <h2 class="section-title reveal">Keahlian Software & Tech Stack</h2>
+      <p class="section-subtitle reveal">Teknologi modern yang dikuasai dan digunakan dalam setiap pengembangan project</p>
+      <div class="skills-list">
+        <div class="skill reveal"><i class="fab fa-html5" style="color: #e34c26;"></i> HTML5 & CSS3</div>
+        <div class="skill reveal"><i class="fab fa-js" style="color: #f7df1e;"></i> JavaScript ES6+</div>
+        <div class="skill reveal"><i class="fab fa-react" style="color: #61dafb;"></i> React & Tailwind</div>
+        <div class="skill reveal"><i class="fab fa-php" style="color: #777bb4;"></i> PHP & MySQL</div>
+        <div class="skill reveal"><i class="fas fa-fire" style="color: #ffa611;"></i> Google Firebase & Cloud</div>
+        <div class="skill reveal"><i class="fas fa-mobile-alt" style="color: #38bdf8;"></i> Capacitor 8.3.0 Runtime</div>
+        <div class="skill reveal"><i class="fas fa-shield-halved" style="color: #10b981;"></i> Security & Obfuscation</div>
+        <div class="skill reveal"><i class="fas fa-palette" style="color: #ff007f;"></i> UI/UX Elderly Accessibility</div>
+      </div>
+    </section>
+
+    <!-- Layanan Gratis -->
+    <section class="projects">
+      <h2 class="section-title reveal" style="text-align: center;">Layanan Gratis Dari PRXD App</h2>
+      <p class="section-subtitle reveal" style="text-align: center;">Utility & Layanan publik tanpa biaya yang dapat langsung digunakan</p>
+      <div class="project-list">
+        <a href="https://qr-codein.rf.gd/" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img src="qr.png" alt="QR Code Generator by PRXD App">
+          </div>
+          <div class="project-info">
+            <h3>QR Code Generator</h3>
+            <p>Layanan pembuat QR Code cepat, instan, gratis tanpa iklan pop-up yang mengganggu. Sangat praktis untuk kebutuhan publikasi.</p>
+            <div class="learn-more">Gunakan Layanan <i class="fa fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        
+      <div class="project-list">
+        <a href="https://menfesin-aja.rf.gd/" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img src="menfesin.png" alt="Prxd App Free">
+          </div>
+          <div class="project-info">
+            <h3>Menfes IN aja</h3>
+            <p>Ungkapkan Perasaan Anda Kepada pemilik link, tanpa perlu menyebutkan nama Anda, Nyaman Dan Aman.</p>
+            <div class="learn-more">Gunakan Layanan <i class="fa fa-arrow-right"></i></div>
+          </div>
+        </a>
+</div>
+ <div class="project-list">
+        <a href="https://short-linkin-aja.rf.gd/" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img src="Shortlinkin.png" alt="Prxd App Free">
+          </div>
+          <div class="project-info">
+            <h3>Short Linkin aja</h3>
+            <p>Link panjang Disulam Menjadi Link Pendek secara gratis tanpa iklan, tanpa pop up, Aman Dan Nyaman.</p>
+            <div class="learn-more">Gunakan Layanan <i class="fa fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- Project Web Portofolio -->
+    <section class="projects" id="projects">
+      <h2 class="section-title reveal" style="text-align: center;">Project Web Portofolio</h2>
+      <p class="section-subtitle reveal" style="text-align: center;">Koleksi platform web interaktif, marketplace, dan sistem informasi</p>
+      <div class="project-list">
+        
+        <a href="https://fastwork.id/user/tongkamproject?source=search" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img src="tongkam.png" alt="Tongkrongan Kampus Project Fastwork">
+          </div>
+          <div class="project-info">
+            <h3>Tongkrongan Kampus Project</h3>
+            <p>Jasa konsultasi web, joki tugas IT, dan pembuatan software custom resmi di platform Fastwork.</p>
+            <div class="learn-more">Hubungi via Fastwork <i class="fa fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <a href="https://wee.great-site.net" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img src="wicsosial.png" alt="WIC Social Media Platform">
+          </div>
+          <div class="project-info">
+            <h3>WIC (Social Media Platform)</h3>
+            <p>Platform sosial media interaktif (32MB aggregator) dengan database Monsta V2 Pro teroptimasi untuk kecepatan performa tinggi.</p>
+            <div class="learn-more">Kunjungi Web WIC <i class="fa fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <a href="https://reservasi.great-site.net" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img src="Reser.png" alt="RESERVASI Sistem Booking UMKM">
+          </div>
+          <div class="project-info">
+            <h3>RESERVASI Sistem Booking</h3>
+            <p>Sistem manajemen booking ruangan, pesanan makanan, dan kasir POS terintegrasi gratis untuk pelaku UMKM.</p>
+            <div class="learn-more">Lihat Sistem Booking <i class="fa fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <a href="https://wicprxdapp.great-site.net/indocraft/" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img src="NC.png" alt="Nusantara Craft E-Commerce">
+          </div>
+          <div class="project-info">
+            <h3>Nusantara Craft</h3>
+            <p>E-commerce kerajinan lokal Indonesia berbasis metodologi SDLC Waterfall dengan keamanan tinggi dan UI modern.</p>
+            <div class="learn-more">Lihat Demo E-Commerce <i class="fa fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <a href="https://sistem-biro-logistik.rf.gd/" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img src="biro.png" alt="Sistem Biro Logistik Polda">
+          </div>
+          <div class="project-info">
+            <h3>Sistem Biro Logistik</h3>
+            <p>Sistem operasional dan pengelolaan data logistik terpusat yang dikembangkan untuk efisiensi instansi.</p>
+            <div class="learn-more">Kunjungi Sistem Logistik <i class="fa fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Mobile Apps Section (Capacitor) -->
+    <section class="capacitor-section">
+      <h2 class="section-title reveal" style="text-align: center;">Project APK Capacitor (Android)</h2>
+      <p class="section-subtitle reveal" style="text-align: center;">Aplikasi Android Native berbasis Web Runtime Capacitor & Obfuskasi Kode</p>
+      
+      <div class="app-grid">
+        <div class="app-card reveal">
+          <div class="app-img-wrapper">
+            <img src="wict.jpeg" alt="WICT Mobile Client App">
+          </div>
+          <div class="app-details">
+            <h3>WICT Mobile Client</h3>
+            <p><i class="fab fa-android"></i> Android APK v2.0</p>
+          </div>
+        </div>
+
+        <div class="app-card reveal">
+          <div class="app-img-wrapper">
+            <img src="panellab.jpeg" alt="Panel Lab Mobile AI">
+          </div>
+          <div class="app-details">
+            <h3>Panel Lab Mobile AI</h3>
+            <p><i class="fab fa-android"></i> Android APK v5.0 (PKM AI Health)</p>
+          </div>
+        </div>
+
+        <div class="app-card reveal">
+          <div class="app-img-wrapper">
+            <img src="si.jpeg" alt="Si Absen Mahasiswa App">
+          </div>
+          <div class="app-details">
+            <h3>Si Absen Mahasiswa</h3>
+            <p><i class="fab fa-android"></i> Android APK v1.0</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Gemini AI Floating Floating Widget -->
+  <button class="ai-toggle-btn" id="aiToggleBtn" title="Tanya AI PRXD">
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
+  </button>
+
+  <div class="ai-chat-card" id="aiChatCard">
+    <div class="ai-chat-header">
+      <div class="title">
+        <i class="fa-solid fa-robot"></i> PRXD AI (Gemini 2.5 Flash)
+      </div>
+      <button class="close-btn" id="aiCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="ai-chat-body" id="aiChatBody">
+      <div class="ai-msg bot">
+        Halo! Saya asisten AI berbasis <strong>Gemini 2.5 Flash</strong> real-time. Ada yang bisa saya bantu terkait project, profil Nyoman Pradipa, atau topik lainnya?
+      </div>
+    </div>
+    <div class="ai-chat-footer">
+      <input type="text" id="aiInput" placeholder="Ketik pertanyaan...">
+      <button id="aiSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 PRXD App — Developed by Nyoman Pradipa Adyatma. All rights reserved.</p>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/prxd_1203?igsh=b3Q4MWhiYmo2dHVs" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.threads.com/@prxd_1203" target="_blank" rel="noopener" aria-label="Threads"><i class="fab fa-threads"></i></a>
+    </div>
+  </footer>
+
+  <!-- Script Navigation & Gemini 2.5 Integration -->
+  <script>
+    // Header Scroll Glass Effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Intersection Observer untuk Smooth Reveal
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.12
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ==========================================
+    // GEMINI 2.5 FLASH AI INTEGRATION
+    // ==========================================
+    const GEMINI_API_KEY = "AIzaSyALYRGRQWOe2Vmv9r2wwR9HW-5eykjPMAE";
+    const aiToggleBtn = document.getElementById('aiToggleBtn');
+    const aiChatCard = document.getElementById('aiChatCard');
+    const aiCloseBtn = document.getElementById('aiCloseBtn');
+    const aiChatBody = document.getElementById('aiChatBody');
+    const aiInput = document.getElementById('aiInput');
+    const aiSendBtn = document.getElementById('aiSendBtn');
+
+    // Toggle Chat Window
+    aiToggleBtn.addEventListener('click', () => {
+      aiChatCard.classList.toggle('active');
+    });
+
+    aiCloseBtn.addEventListener('click', () => {
+      aiChatCard.classList.remove('active');
+    });
+
+    // Helper untuk menambah pesan ke chat window
+    function appendMessage(text, sender) {
+      const msgDiv = document.createElement('div');
+      msgDiv.classList.add('ai-msg', sender);
+      msgDiv.innerHTML = text;
+      aiChatBody.appendChild(msgDiv);
+      aiChatBody.scrollTop = aiChatBody.scrollHeight;
+      return msgDiv;
+    }
+
+    // Fungsi utama pemanggilan API Gemini 2.5 Flash
+    async function sendToGemini(userPrompt) {
+      appendMessage(userPrompt, 'user');
+      aiInput.value = '';
+
+      const loadingMsg = appendMessage('<i class="fa-solid fa-spinner fa-spin"></i> Memproses dengan Gemini 2.5 Flash...', 'bot');
+
+      // Endpoint model Gemini 2.5 Flash
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+      const payload = {
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: userPrompt }]
+          }
+        ],
+        // Menyarankan grounding Google Search agar data selalu real-time
+        tools: [
+          { googleSearch: {} }
+        ]
+      };
+
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+        
+        if (data.candidates && data.candidates[0].content.parts[0].text) {
+          let botResponse = data.candidates[0].content.parts[0].text;
+          // Format sederhana untuk penulisan bold
+          botResponse = botResponse.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+          loadingMsg.innerHTML = botResponse;
+        } else {
+          loadingMsg.innerHTML = "Maaf, terjadi masalah saat memproses tanggapan dari Gemini.";
+        }
+      } catch (err) {
+        console.error(err);
+        loadingMsg.innerHTML = "Gagal terhubung ke layanan Gemini API. Periksa koneksi internet Anda.";
+      }
+    }
+
+    // Event listener kirim pesan
+    aiSendBtn.addEventListener('click', () => {
+      const text = aiInput.value.trim();
+      if (text) sendToGemini(text);
+    });
+
+    aiInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const text = aiInput.value.trim();
+        if (text) sendToGemini(text);
+      }
+    });
+  </script>
+</body>
+</html>
