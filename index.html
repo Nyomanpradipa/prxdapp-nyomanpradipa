@@ -1044,7 +1044,7 @@ footer .social-media a:hover {
           <h3>Capacitor & Web</h3>
           <p>Web-to-App Modder</p>
         </div>
-<div class="stat-item">
+        <div class="stat-item">
           <h3>React Native (google)</h3>
           <p>Aplikasi Murni Menggunakan Native</p>
         </div>
@@ -1164,8 +1164,6 @@ footer .social-media a:hover {
           </div>
         </a>
 
-        
-      <div class="project-list">
         <a href="https://menfesin-aja.rf.gd/" class="project-card reveal" target="_blank" rel="noopener">
           <div class="img-wrapper">
             <img src="menfesin.png" alt="Prxd App Free">
@@ -1176,8 +1174,7 @@ footer .social-media a:hover {
             <div class="learn-more">Gunakan Layanan <i class="fa fa-arrow-right"></i></div>
           </div>
         </a>
-</div>
- <div class="project-list">
+
         <a href="https://short-linkin-aja.rf.gd/" class="project-card reveal" target="_blank" rel="noopener">
           <div class="img-wrapper">
             <img src="Shortlinkin.png" alt="Prxd App Free">
@@ -1188,9 +1185,7 @@ footer .social-media a:hover {
             <div class="learn-more">Gunakan Layanan <i class="fa fa-arrow-right"></i></div>
           </div>
         </a>
-
       </div>
-
     </section>
 
     <!-- Project Web Portofolio -->
@@ -1296,7 +1291,7 @@ footer .social-media a:hover {
     </section>
   </main>
 
-  <!-- Gemini AI Floating Floating Widget -->
+  <!-- Gemini AI Floating Widget -->
   <button class="ai-toggle-btn" id="aiToggleBtn" title="Tanya AI PRXD">
     <i class="fa-solid fa-wand-magic-sparkles"></i>
   </button>
@@ -1357,7 +1352,9 @@ footer .social-media a:hover {
     // ==========================================
     // GEMINI 2.5 FLASH AI INTEGRATION
     // ==========================================
-    const GEMINI_API_KEY = "AIzaSyALYRGRQWOe2Vmv9r2wwR9HW-5eykjPMAE";
+    // MASUKKAN API KEY BARU YANG SUDAH DIBATASI (RESTRICTED) DI SINI
+    const GEMINI_API_KEY = "ISIKAN_API_KEY_BARU_KAMU_DI_SINI";
+
     const aiToggleBtn = document.getElementById('aiToggleBtn');
     const aiChatCard = document.getElementById('aiChatCard');
     const aiCloseBtn = document.getElementById('aiCloseBtn');
@@ -1386,6 +1383,11 @@ footer .social-media a:hover {
 
     // Fungsi utama pemanggilan API Gemini 2.5 Flash
     async function sendToGemini(userPrompt) {
+      if (!GEMINI_API_KEY || GEMINI_API_KEY === "AIzaSyBEf8SGOTU4UDqsXTMcovo01rjGnR8si1Q") {
+        appendMessage("API Key belum terpasang. Harap konfigurasikan GEMINI_API_KEY terlebih dahulu.", "bot");
+        return;
+      }
+
       appendMessage(userPrompt, 'user');
       aiInput.value = '';
 
@@ -1401,7 +1403,6 @@ footer .social-media a:hover {
             parts: [{ text: userPrompt }]
           }
         ],
-        // Menyarankan grounding Google Search agar data selalu real-time
         tools: [
           { googleSearch: {} }
         ]
@@ -1418,7 +1419,6 @@ footer .social-media a:hover {
         
         if (data.candidates && data.candidates[0].content.parts[0].text) {
           let botResponse = data.candidates[0].content.parts[0].text;
-          // Format sederhana untuk penulisan bold
           botResponse = botResponse.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
           loadingMsg.innerHTML = botResponse;
         } else {
