@@ -1305,7 +1305,7 @@ footer .social-media a:hover {
     </div>
     <div class="ai-chat-body" id="aiChatBody">
       <div class="ai-msg bot">
-        Halo! Saya asisten AI berbasis <strong>Gemini 2.5 Flash</strong> real-time. Ada yang bisa saya bantu terkait project, profil Nyoman Pradipa, atau topik lainnya?
+        Halo! Saya asisten AI berbasis <strong>Gemini 2.5 Flash</strong>. Ada yang bisa saya bantu terkait project atau profil Nyoman Pradipa?
       </div>
     </div>
     <div class="ai-chat-footer">
@@ -1325,7 +1325,7 @@ footer .social-media a:hover {
     </div>
   </footer>
 
-  <!-- Script Navigation & Gemini 2.5 Integration -->
+  <!-- Script Navigation & Safe Client-Side Storage -->
   <script>
     // Header Scroll Glass Effect
     window.addEventListener('scroll', () => {
@@ -1350,11 +1350,8 @@ footer .social-media a:hover {
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // ==========================================
-    // GEMINI 2.5 FLASH AI INTEGRATION
+    // GEMINI 2.5 FLASH AI INTEGRATION SAFE STORAGE
     // ==========================================
-    // MASUKKAN API KEY BARU YANG SUDAH DIBATASI (RESTRICTED) DI SINI
-    const GEMINI_API_KEY = "AIzaSyBEf8SGOTU4UDqsXTMcovo01rjGnR8si1Q";
-
     const aiToggleBtn = document.getElementById('aiToggleBtn');
     const aiChatCard = document.getElementById('aiChatCard');
     const aiCloseBtn = document.getElementById('aiCloseBtn');
@@ -1371,7 +1368,6 @@ footer .social-media a:hover {
       aiChatCard.classList.remove('active');
     });
 
-    // Helper untuk menambah pesan ke chat window
     function appendMessage(text, sender) {
       const msgDiv = document.createElement('div');
       msgDiv.classList.add('ai-msg', sender);
@@ -1381,10 +1377,23 @@ footer .social-media a:hover {
       return msgDiv;
     }
 
-    // Fungsi utama pemanggilan API Gemini 2.5 Flash
+    // Mengambil API Key dari Browser LocalStorage secara aman tanpa menaruhnya di file Git
+    function getStoredApiKey() {
+      let key = localStorage.getItem('PRXD_GEMINI_KEY');
+      if (!key) {
+        key = prompt("Gunakan fitur AI: Masukkan Gemini API Key Kamu (Tersimpan aman di browser kamu sahaja):");
+        if (key) {
+          localStorage.setItem('PRXD_GEMINI_KEY', key.trim());
+        }
+      }
+      return key;
+    }
+
     async function sendToGemini(userPrompt) {
-      if (!GEMINI_API_KEY || GEMINI_API_KEY === "AIzaSyBEf8SGOTU4UDqsXTMcovo01rjGnR8si1Q") {
-        appendMessage("API Key belum terpasang. Harap konfigurasikan GEMINI_API_KEY terlebih dahulu.", "bot");
+      const apiKey = getStoredApiKey();
+
+      if (!apiKey) {
+        appendMessage("API Key belum diisi. Gagal memproses pesan AI.", "bot");
         return;
       }
 
@@ -1393,8 +1402,7 @@ footer .social-media a:hover {
 
       const loadingMsg = appendMessage('<i class="fa-solid fa-spinner fa-spin"></i> Memproses dengan Gemini 2.5 Flash...', 'bot');
 
-      // Endpoint model Gemini 2.5 Flash
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
       const payload = {
         contents: [
@@ -1403,9 +1411,7 @@ footer .social-media a:hover {
             parts: [{ text: userPrompt }]
           }
         ],
-        tools: [
-          { googleSearch: {} }
-        ]
+        tools: [{ googleSearch: {} }]
       };
 
       try {
@@ -1421,16 +1427,18 @@ footer .social-media a:hover {
           let botResponse = data.candidates[0].content.parts[0].text;
           botResponse = botResponse.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
           loadingMsg.innerHTML = botResponse;
+        } else if (data.error) {
+          loadingMsg.innerHTML = `<strong>Gagal:</strong> ${data.error.message || 'API Key tidak valid.'}`;
+          localStorage.removeItem('PRXD_GEMINI_KEY'); // Reset key yang gagal
         } else {
-          loadingMsg.innerHTML = "Maaf, terjadi masalah saat memproses tanggapan dari Gemini.";
+          loadingMsg.innerHTML = "Maaf, terjadi masalah saat memproses tanggapan.";
         }
       } catch (err) {
         console.error(err);
-        loadingMsg.innerHTML = "Gagal terhubung ke layanan Gemini API. Periksa koneksi internet Anda.";
+        loadingMsg.innerHTML = "Koneksi ke Gemini API gagal. Periksa jaringan Anda.";
       }
     }
 
-    // Event listener kirim pesan
     aiSendBtn.addEventListener('click', () => {
       const text = aiInput.value.trim();
       if (text) sendToGemini(text);
