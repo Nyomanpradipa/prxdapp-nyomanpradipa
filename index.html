@@ -27,7 +27,7 @@
   <meta name="twitter:description" content="Full-Stack Web, Capacitor Mobile App Developer, dan Content Moderator.">
   <meta name="twitter:image" content="pA.jpg">
 
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/png" href="Minimal initial brand logo (1).png">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,6 +97,7 @@ img { max-width: 100%; display: block; }
   100% { transform: translate(50px, 60px) scale(1.2); }
 }
 
+/* Scroll-Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(35px);
@@ -108,7 +109,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================
-   2. HEADER & NAVIGATION
+   2. HEADER & NAVIGATION (MOBILE OPTIMIZED)
    ========================================== */
 header {
   position: fixed;
@@ -117,17 +118,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 8%;
+  padding: 16px 8%;
   z-index: 1000;
-  background: rgba(7, 10, 18, 0.5);
+  background: rgba(7, 10, 18, 0.6);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
   transition: var(--transition-smooth);
 }
 
 header.scrolled { 
   padding: 12px 8%;
-  background: rgba(7, 10, 18, 0.92);
+  background: rgba(7, 10, 18, 0.95);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border-bottom-color: rgba(56, 189, 248, 0.2);
 }
@@ -135,12 +137,12 @@ header.scrolled {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .brand-logo img {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   object-fit: cover;
   border: 1px solid var(--glass-border-active);
@@ -148,7 +150,7 @@ header.scrolled {
 }
 
 .brand-logo .brand-text {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: 0.5px;
   background: linear-gradient(135deg, #ffffff 40%, var(--accent));
@@ -158,7 +160,7 @@ header.scrolled {
 
 header nav {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
 }
 
@@ -169,7 +171,7 @@ header nav {
 }
 
 .nav-links a {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-muted);
   transition: var(--transition-smooth);
@@ -185,16 +187,17 @@ header nav {
 .header-btn {
   background: linear-gradient(135deg, var(--primary), #1d4ed8);
   color: #fff;
-  padding: 9px 20px;
+  padding: 8px 18px;
   border-radius: 30px;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   display: flex;
   align-items: center;
   gap: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 15px var(--primary-glow);
   transition: var(--transition-smooth);
+  white-space: nowrap;
 }
 
 .header-btn:hover {
@@ -279,10 +282,10 @@ header nav {
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -1.5px;
+  line-height: 1.15;
+  letter-spacing: -1px;
   margin-bottom: 20px;
   background: linear-gradient(135deg, #ffffff 30%, var(--accent), var(--primary));
   -webkit-background-clip: text;
@@ -291,7 +294,7 @@ header nav {
 
 .hero p {
   max-width: 750px;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 36px;
@@ -306,10 +309,10 @@ header nav {
 }
 
 .hero .buttons a {
-  padding: 15px 32px;
+  padding: 14px 30px;
   border-radius: 30px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -343,19 +346,19 @@ header nav {
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px;
   background: var(--bg-card);
   backdrop-filter: blur(16px);
-  padding: 20px 35px;
+  padding: 20px 28px;
   border-radius: 24px;
   border: 1px solid var(--glass-border);
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  max-width: 800px;
+  max-width: 850px;
   width: 100%;
 }
 
 .stat-item h3 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: #fff;
   background: linear-gradient(135deg, #fff, var(--accent));
@@ -364,12 +367,12 @@ header nav {
 }
 
 .stat-item p {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
 /* ==========================================
-   4. DETAILED ABOUT ME & RECORDS SECTION (PERJALANAN)
+   4. DETAILED ABOUT ME & RECORDS SECTION
    ========================================== */
 .about-section {
   padding: 90px 8%;
@@ -377,7 +380,7 @@ header nav {
 
 .bento-about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
@@ -388,7 +391,7 @@ header nav {
   backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: 24px;
-  padding: 32px;
+  padding: 30px;
   transition: var(--transition-smooth);
 }
 
@@ -398,7 +401,7 @@ header nav {
 }
 
 .bento-card h3 {
-  font-size: 1.35rem;
+  font-size: 1.28rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 16px;
@@ -412,7 +415,7 @@ header nav {
 }
 
 .bento-card p {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   line-height: 1.6;
   color: var(--text-muted);
   margin-bottom: 14px;
@@ -426,7 +429,7 @@ header nav {
 }
 
 .bento-list li {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-main);
   display: flex;
   align-items: flex-start;
@@ -479,16 +482,16 @@ header nav {
 }
 
 .section-title {
-  font-size: 2.2rem; 
+  font-size: 2.1rem; 
   font-weight: 800;
   margin-bottom: 12px;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .section-subtitle {
   color: var(--text-muted);
   margin-bottom: 45px;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .skills-list { 
@@ -502,9 +505,10 @@ header nav {
 
 .skill {
   background: rgba(255, 255, 255, 0.03);
-  padding: 16px 24px;
+  padding: 14px 22px;
   border-radius: 18px;
   font-weight: 600;
+  font-size: 0.9rem;
   color: var(--text-main);
   border: 1px solid var(--glass-border);
   transition: var(--transition-smooth);
@@ -530,8 +534,8 @@ header nav {
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -549,7 +553,7 @@ header nav {
 
 .project-card .img-wrapper {
   overflow: hidden;
-  height: 210px;
+  height: 200px;
   position: relative;
 }
 
@@ -565,7 +569,7 @@ header nav {
 }
 
 .project-card .project-info { 
-  padding: 28px; 
+  padding: 24px; 
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -574,7 +578,7 @@ header nav {
 .project-card .project-info h3 { 
   color: white; 
   margin-bottom: 10px; 
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
@@ -583,16 +587,16 @@ header nav {
 }
 
 .project-card .project-info p { 
-  font-size: 0.92rem; 
+  font-size: 0.88rem; 
   line-height: 1.6; 
   color: var(--text-muted); 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .project-card .learn-more {
   margin-top: auto;
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--accent);
   display: flex;
   align-items: center;
@@ -601,12 +605,12 @@ header nav {
 }
 
 .project-card:hover .learn-more {
-  gap: 14px;
+  gap: 12px;
   color: #fff;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   border-color: var(--glass-border-active);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
@@ -620,8 +624,8 @@ header nav {
 
 .app-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -630,7 +634,7 @@ header nav {
   background: var(--bg-card);
   backdrop-filter: blur(14px);
   border: 1px solid var(--glass-border);
-  border-radius: 32px;
+  border-radius: 28px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -658,20 +662,20 @@ header nav {
 }
 
 .app-details {
-  padding: 20px;
+  padding: 18px;
   text-align: center;
   border-top: 1px solid var(--glass-border);
 }
 
 .app-details h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .app-details p {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--accent);
   font-weight: 600;
   display: inline-flex;
@@ -680,20 +684,20 @@ header nav {
 }
 
 .app-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   border-color: var(--primary);
   box-shadow: 0 20px 45px rgba(37, 99, 235, 0.25);
 }
 
 /* ==========================================
-   8. TERMINAL CONSOLE WIDGET (REPLACES AI)
+   8. TERMINAL COMMAND LAUNCHER (INTERACTIVE CONSOLE)
    ========================================== */
 .term-toggle-btn {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
@@ -704,7 +708,7 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   transition: var(--transition-smooth);
 }
 
@@ -717,13 +721,13 @@ header nav {
   position: fixed;
   bottom: 95px;
   right: 25px;
-  width: 380px;
-  max-width: calc(100vw - 40px);
-  height: 420px;
+  width: 420px;
+  max-width: calc(100vw - 32px);
+  height: 450px;
   background: #0d1117;
   border: 1px solid var(--glass-border-active);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.85);
   z-index: 2000;
   display: flex;
   flex-direction: column;
@@ -749,7 +753,7 @@ header nav {
   align-items: center;
   justify-content: space-between;
   color: #8b949e;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
 }
 
@@ -757,7 +761,7 @@ header nav {
   flex: 1;
   padding: 16px;
   overflow-y: auto;
-  font-size: 0.83rem;
+  font-size: 0.82rem;
   color: #c9d1d9;
   display: flex;
   flex-direction: column;
@@ -793,7 +797,7 @@ footer {
   background: #04060b;
   border-top: 1px solid var(--glass-border);
   color: var(--text-muted);
-  font-size: 0.95rem; 
+  font-size: 0.92rem; 
 }
 
 footer .social-media {
@@ -804,8 +808,8 @@ footer .social-media {
 }
 
 footer .social-media a {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--glass-border);
@@ -825,27 +829,45 @@ footer .social-media a:hover {
 }
 
 /* ==========================================
-   10. RESPONSIVE
+   10. RESPONSIVE & MOBILE FIXES
    ========================================== */
 @media(max-width: 768px){
   header { 
-    padding: 15px 20px; 
-    flex-direction: column; 
-    gap: 12px;
+    padding: 12px 16px; 
+    flex-direction: row; 
+    justify-content: space-between;
   }
 
   .nav-links {
-    display: none;
+    display: none; /* Sembunyikan nav text di HP agar header bersih & rapi */
+  }
+
+  .brand-logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-logo .brand-text {
+    font-size: 1.05rem;
+  }
+
+  .header-btn {
+    padding: 7px 14px;
+    font-size: 0.78rem;
+  }
+
+  .hero {
+    padding-top: 110px;
   }
 
   .hero h1 { 
-    font-size: 2.3rem; 
+    font-size: 2.1rem; 
   }
 
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 20px;
+    gap: 12px;
+    padding: 18px;
   }
   
   .hero .buttons {
@@ -862,12 +884,13 @@ footer .social-media a:hover {
   
   .app-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 14px;
   }
 
   .term-card {
-    right: 15px;
+    right: 16px;
     bottom: 85px;
+    width: calc(100vw - 32px);
   }
 }
   </style>
@@ -946,7 +969,7 @@ footer .social-media a:hover {
       </div>
     </section>
 
-    <!-- About Me & Records Section (PERJALANAN & RIWAYAT) -->
+    <!-- About Me & Records Section -->
     <section class="about-section" id="about">
       <h2 class="section-title reveal" style="text-align: center;">Tentang Aku & Catatan Riwayat</h2>
       <p class="section-subtitle reveal" style="text-align: center;">Rangkuman identitas, rekam jejak akademik, spesialisasi teknis, dan pencapaian yang pernah dikerjakan</p>
@@ -987,9 +1010,9 @@ footer .social-media a:hover {
           </ul>
         </div>
 
-        <!-- Card 4: Catatan Timeline Project (PERJALANAN LENGKAP) -->
+        <!-- Card 4: Catatan Timeline Project -->
         <div class="bento-card reveal" style="grid-column: span 1 / -1;">
-          <h3><i class="fa-solid fa-clock-rotate-left"></i> Catatan Riwayat & Perjalanan Project Utama</h3>
+          <h3><i class="fa-solid fa-clock-rotate-left"></i> Catatan Riwayat Project Utama</h3>
           <div class="timeline-box">
             
             <div class="timeline-item">
@@ -1181,23 +1204,23 @@ footer .social-media a:hover {
     </section>
   </main>
 
-  <!-- Terminal Console Floating Widget -->
-  <button class="term-toggle-btn" id="termToggleBtn" title="Buka PRXD Terminal Console">
+  <!-- Interactive Terminal Command Launcher -->
+  <button class="term-toggle-btn" id="termToggleBtn" title="Buka Terminal PRXD">
     <i class="fa-solid fa-terminal"></i>
   </button>
 
   <div class="term-card" id="termCard">
     <div class="term-header">
-      <span><i class="fa-solid fa-code"></i> prxd-console ~ v1.0</span>
+      <span><i class="fa-solid fa-code"></i> prxd-console ~ v2.0</span>
       <button id="termCloseBtn" style="background:none; border:none; color:#8b949e; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="term-body" id="termBody">
-      <div style="color: #58a6ff;">Selamat datang di PRXD Terminal Console!</div>
-      <div>Ketik <span style="color:#f2cc60;">'help'</span> untuk melihat daftar perintah.</div>
+      <div style="color: #58a6ff;">PRXD Terminal Command Launcher</div>
+      <div>Ketik <span style="color:#f2cc60;">'help'</span> untuk melihat daftar perintah & snippet codingan.</div>
     </div>
     <div class="term-footer">
       <span style="color:#3fb950;">$</span>
-      <input type="text" id="termInput" placeholder="Ketik perintah..." autofocus>
+      <input type="text" id="termInput" placeholder="Ketik perintah... (contoh: help, code, projects)">
     </div>
   </div>
 
@@ -1212,7 +1235,7 @@ footer .social-media a:hover {
     </div>
   </footer>
 
-  <!-- Script Navigation & Terminal Command System -->
+  <!-- Script Navigation & Advanced Terminal Command System -->
   <script>
     // Header Scroll Glass Effect
     window.addEventListener('scroll', () => {
@@ -1237,7 +1260,7 @@ footer .social-media a:hover {
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // ==========================================
-    // INTERACTIVE TERMINAL CONSOLE SYSTEM
+    // INTERACTIVE TERMINAL LAUNCHER (CODE REQUEST & COMMANDS)
     // ==========================================
     const termToggleBtn = document.getElementById('termToggleBtn');
     const termCard = document.getElementById('termCard');
@@ -1270,22 +1293,48 @@ footer .social-media a:hover {
 
         switch(cmd) {
           case 'help':
-            printTerm("Perintah tersedia: <br>- <b>about</b>: Ringkasan profil & target karir <br>- <b>projects</b>: Daftar seluruh project unggulan <br>- <b>skills</b>: Tech stack & spesialisasi <br>- <b>clear</b>: Bersihkan layar terminal", "#d2a8ff");
+            printTerm("Daftar Perintah Terminal:<br>" +
+                      "- <b style='color:#f2cc60;'>about</b> : Profil & Target Karir Jepang<br>" +
+                      "- <b style='color:#f2cc60;'>projects</b> : Daftar Project Web & APK<br>" +
+                      "- <b style='color:#f2cc60;'>skills</b> : Keahlian Software & Security<br>" +
+                      "- <b style='color:#f2cc60;'>code</b> : Contoh Snippet Codingan JS/Capacitor<br>" +
+                      "- <b style='color:#f2cc60;'>clear</b> : Bersihkan layar terminal", "#d2a8ff");
             break;
+
           case 'about':
-            printTerm("Nyoman Pradipa Adyatma: Mahasiswa Sistem Informasi (S1), Developer Mobile Capacitor & Web, serta Moderator Digital. Memiliki target karir bekerja di Jepang.", "#7ee787");
+            printTerm("<b>Nyoman Pradipa Adyatma</b><br>Mahasiswa S1 Sistem Informasi, Mobile Developer (Capacitor), Pakar Firebase & Security Obfuscation, serta Content Moderator.", "#7ee787");
             break;
+
           case 'projects':
-            printTerm("1. WIC App (Social Aggregator)<br>2. Panel Lab Mobile AI (Health PKM)<br>3. Nusantara Craft (E-Commerce Waterfall)<br>4. Sistem Biro Logistik Polda", "#7ee787");
+            printTerm("1. <b>WIC App</b> (Social Media Aggregator 32MB)<br>" +
+                      "2. <b>Panel Lab Mobile AI</b> (Aplikasi Kesehatan PKM)<br>" +
+                      "3. <b>Nusantara Craft</b> (E-Commerce SDLC Waterfall)<br>" +
+                      "4. <b>Sistem Biro Logistik Polda</b><br>" +
+                      "5. <b>Si Absen Mahasiswa</b> (APK Capacitor)", "#7ee787");
             break;
+
           case 'skills':
-            printTerm("JavaScript ES6+, Capacitor 8.3.0, Firebase, PHP & MySQL, Obfuscation Testing, UI/UX Accessibility", "#7ee787");
+            printTerm("JavaScript ES6+, Capacitor 8.3.0, React Native, Firebase Rules, SHA-256 Key Encryption, MT Manager Audit, UI/UX Elderly Accessibility.", "#7ee787");
             break;
+
+          case 'code':
+          case 'codingan':
+            printTerm("<b style='color:#38bdf8;'>[Snippet JavaScript - Obfuskasi API Key sederhana]</b><br>" +
+                      "<pre style='background:#161b22; padding:8px; border-radius:6px; color:#e6edf3; font-size:0.75rem; overflow-x:auto; margin-top:4px;'>" +
+                      "// Memecah key agar aman dari scanner GitHub\n" +
+                      "const part1 = 'AIzaSyA';\n" +
+                      "const part2 = 'LYRGRQWOe2Vmv';\n" +
+                      "const API_KEY = part1 + part2;\n" +
+                      "console.log('Key Loaded Securely');" +
+                      "</pre>", "#ffffff");
+            break;
+
           case 'clear':
             termBody.innerHTML = '';
             break;
+
           default:
-            printTerm(`Perintah '${cmd}' tidak dikenal. Ketik <span style='color:#f2cc60;'>'help'</span>.`, "#ffa657");
+            printTerm(`Perintah '<span style='color:#ff7b72;'>${cmd}</span>' tidak ditemukan. Ketik <span style='color:#f2cc60;'>'help'</span> untuk bantuan.`, "#ffa657");
         }
       }
     });
